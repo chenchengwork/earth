@@ -1,8 +1,0 @@
-
-//WebGLHeatmap Shader:
-
-
-//Heights Shader:
-
-
-
