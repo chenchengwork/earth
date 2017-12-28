@@ -16,6 +16,14 @@ import {
  * @constructor
  */
 export default class Camera {
+    /**
+     * @param {Object} options
+     * @param {Array} options.coordinate 起始位置
+     * @param {Array} options.targetCoordinate 结束位置
+     * @param {Float} options.lerpSpeed 旋转速度
+     * @param {Boolean} options.globe 是否为3D球形
+     *
+     */
     constructor(options) {
         var self = this;
 
@@ -83,8 +91,6 @@ export default class Camera {
 
         //地球默认大小
         self.earthDefaultSize = 1.6;
-
-        // return self;
     }
 
     /**
@@ -198,7 +204,6 @@ export default class Camera {
     }
 
     unproject(e, t) {
-
         var self = this;
         var r = vec4.create();
         r[0] = 2 * (t[0] / self.viewport[2]) - 1;

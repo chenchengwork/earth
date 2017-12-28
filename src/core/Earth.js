@@ -113,6 +113,7 @@ const THEMES = {
         coordinate: [-103, 36, 5],
         //默认地球目标朝向
         targetCoordinate: [103, 36, 1.5],
+
         //默认地球旋转到目标朝向的速度
         lerpSpeed: .02,
         //默认缩放级别
@@ -165,14 +166,11 @@ export default class Earth {
          * 获取WebGLRenderingContext
          */
         try {
-
             //兼容处于实验阶段的WebGL标准
-            self.context = canvas.getContext("webgl", options.webgl)
-                || canvas.getContext("experimental-webgl", options.webgl);
+            self.context = canvas.getContext("webgl", options.webgl) || canvas.getContext("experimental-webgl", options.webgl);
 
         } catch (n) {
-
-            throw new Error("抱歉,您的浏览器可能不支持WebGL");
+            throw new Error("您的浏览器可能不支持WebGL");
         }
 
         //将canvas添加到容器中
